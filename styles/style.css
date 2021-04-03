@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap'); 
+
+
+body {
+    overflow: hidden;  
+    background-image: url('/images/background.jpg');
+    background-repeat: repeat;
+}
+
+#spaceCanvas {
+    border: 1px solid black;  
+    margin: 0 auto; 
+    display: block; 
+
+    background-image: url('/images/new-field-background.jpeg');
+    background-size: 100% 100%;
+}
+
+/* Game Controls Button  */
+
+
