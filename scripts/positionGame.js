@@ -140,6 +140,16 @@ InGamePosition.prototype.update = function(play){
         }
      }
      
+     for(let i = 0; i < this.shells.length; i++){
+         let shell = this.shells[i]; 
+         if(shell.x + 2 >= (surfer.x - surfer.width / 2) &&
+            shell.x - 2 <= (surfer.x + surfer.width / 2) &&
+            shell.y + 6 >= (surfer.y - surfer.height / 2) &&
+            shell.y <= (surfer.y + surfer.height / 2)){
+                console.log(shell)
+                this.shells.splice(i--, 1); 
+            }
+     }
 
 
 };
