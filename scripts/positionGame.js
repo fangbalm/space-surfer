@@ -135,6 +135,7 @@ InGamePosition.prototype.update = function(play){
                    bullets.splice(x--, 1); 
                    play.sounds.playAudio('pepSound1');
                    collision = true; 
+                   play.score += this.setting.pointsPerCrab; 
             }
         }
 
@@ -231,7 +232,7 @@ InGamePosition.prototype.draw = function(play){
 
     ctx.fillStyle = "#424242";
     ctx.textAlign = "left";
-    ctx.fillText("Press S to switch sound effects. Sound:", play.playBoundaries.left, play.playBoundaries.bottom + 70);
+    ctx.fillText("Press S to toggle sound effects. Sound:", play.playBoundaries.left, play.playBoundaries.bottom + 70);
 
     let soundStatus = (play.sounds.muted === true) ? "OFF" : "ON";
     ctx.fillStyle = (play.sounds.muted === true) ? '#FF0000' : '#0B6121';
@@ -241,7 +242,18 @@ InGamePosition.prototype.draw = function(play){
     ctx.textAlign = "right";
     ctx.fillText("Press P to Pause.", play.playBoundaries.right, play.playBoundaries.bottom + 70);
 
+    ctx.textAlign = "center";
+    ctx.fillStyle = '#BDBDBD';
 
+    ctx.font = "bold 20px Roboto Mono";
+    ctx.fillText("Score", play.playBoundaries.right, play.playBoundaries.top - 75);
+    ctx.font = "30px Roboto Mono";
+    ctx.fillText(play.score, play.playBoundaries.right, play.playBoundaries.top - 25);
+
+    ctx.font = "bold 20px Roboto Mono";
+    ctx.fillText("Level", play.playBoundaries.left, play.playBoundaries.top - 75);
+    ctx.font = "30px Roboto Mono";
+    ctx.fillText(play.level, play.playBoundaries.left, play.playBoundaries.top - 25);
 
 }
 

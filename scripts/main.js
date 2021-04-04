@@ -55,6 +55,8 @@ function GameBasics(canvas) {
 
     shellSpeed: 75, 
     shellFrequency: 0.05, 
+
+    pointsPerCrab: 25, 
   };
 
   // we collect here the different positions, states of the game 

@@ -30,7 +30,7 @@ OpeningPosition.prototype.draw = function(play) {
         
         setTimeout(function () {pressSpaceBlink();}, 500); 
 
-        ctx.font="25px Orbitron";
+        ctx.font="bold 25px Orbitron";
         ctx.fillStyle = '#D7DF01';
 
     
