@@ -226,6 +226,21 @@ InGamePosition.prototype.draw = function(play){
         ctx.drawImage(shell_img, shell.x-2, shell.y)
     }
 
+      // draw Sound & Mute info
+    ctx.font = "16px Roboto Mono";
+
+    ctx.fillStyle = "#424242";
+    ctx.textAlign = "left";
+    ctx.fillText("Press S to switch sound effects. Sound:", play.playBoundaries.left, play.playBoundaries.bottom + 70);
+
+    let soundStatus = (play.sounds.muted === true) ? "OFF" : "ON";
+    ctx.fillStyle = (play.sounds.muted === true) ? '#FF0000' : '#0B6121';
+    ctx.fillText(soundStatus, play.playBoundaries.left + 375, play.playBoundaries.bottom + 70);
+
+    ctx.fillStyle = '#424242';
+    ctx.textAlign = "right";
+    ctx.fillText("Press P to Pause.", play.playBoundaries.right, play.playBoundaries.bottom + 70);
+
 
 
 }

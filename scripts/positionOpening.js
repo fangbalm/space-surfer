@@ -37,10 +37,12 @@ OpeningPosition.prototype.draw = function(play) {
         // Game Controls
         ctx.fillStyle = '#2e2f00';
         ctx.fillText("Game Controls", play.width / 2, play.height/2 + 200); 
-        ctx.fillText("Left Arrow : Move Left", play.width / 2, play.height/2 + 240); 
-        ctx.fillText("Right Arrow : Move Right", play.width / 2, play.height/2 + 280); 
-        ctx.fillText("Space : Fire", play.width / 2, play.height/2 + 320); 
-        ctx.fillText("Mute : S", play.width / 2, play.height/2 + 360)
+
+        ctx.font ="20px Orbitron";
+        ctx.fillText("Left Arrow : Move Left", play.width / 2, play.height/2 + 255); 
+        ctx.fillText("Right Arrow : Move Right", play.width / 2, play.height/2 + 275); 
+        ctx.fillText("Space : Fire", play.width / 2, play.height/2 + 295); 
+        ctx.fillText("Pause : P", play.width / 2, play.height/2 + 315)
 };
 
 OpeningPosition.prototype.keyDown = function(play, keyboardCode) {
