@@ -148,8 +148,12 @@ window.addEventListener("keyup", function (e) {
 
 // Create a GameBasics object
 const play = new GameBasics(canvas);
-play.start();
 
+
+play.sounds = new Sounds(); 
+play.sounds.init();
+
+play.start();
 
 
 

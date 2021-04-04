@@ -16,6 +16,7 @@ InGamePosition.prototype.shoot = function(){
     this.object = new Objects(); 
     this.bullets.push(this.object.bullet(this.surfer.x, this.surfer.y - this.surfer.height / 2, this.setting.bulletSpeed));
     this.lastBulletTime = (new Date().getTime());
+    play.sounds.playAudio('phaseJump1');
 
     }
 
@@ -41,7 +42,6 @@ InGamePosition.prototype.update = function(play){
 
     if(play.pressedKeys[32]){
         this.shoot(); 
-        console.log("SHOOTING")
     }
 
     // if user fires, 
@@ -111,6 +111,7 @@ InGamePosition.prototype.update = function(play){
         this.object = new Objects(); 
         if(shellChance > Math.random()) {
             this.shells.push(this.object.shell(crab.x, crab.y + crab.height / 2));
+            play.sounds.playAudio('pepSound2');
         }
     }
 
@@ -118,7 +119,7 @@ InGamePosition.prototype.update = function(play){
         let shell = this.shells[i]; 
         shell.y += updateSec * this.shellSpeed;
         if(shell.y > this.height){
-            this.shells.splice(i--, 1)
+            this.shells.splice(i--, 1);
         }
     }
 
@@ -131,6 +132,7 @@ InGamePosition.prototype.update = function(play){
             if(bullet.x >= (crab.x - crab.width / 2) && bullet.x <= (crab.x + crab.width / 2) && 
                bullet.y >= (crab.y - crab.height /2 ) && bullet.y <=(crab.y + crab.height / 2)){
                    bullets.splice(x--, 1); 
+                   play.sounds.playAudio('pepSound1');
                    collision = true; 
             }
         }
@@ -146,8 +148,10 @@ InGamePosition.prototype.update = function(play){
             shell.x - 2 <= (surfer.x + surfer.width / 2) &&
             shell.y + 6 >= (surfer.y - surfer.height / 2) &&
             shell.y <= (surfer.y + surfer.height / 2)){
-                console.log(shell)
+                
                 this.shells.splice(i--, 1); 
+                play.sounds.playAudio('zapThreeToneDown');
+                play.goToPosition(new OpeningPosition());
             }
      }
 

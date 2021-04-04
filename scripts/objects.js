@@ -30,6 +30,7 @@ Objects.prototype.crab = function(x, y, line, column, crab_image){
     this.height = 25; 
     this.crab_image = crab_image; 
     this.crab_image.src = '/images/crab.png';
+       
     return this; 
 
 }
