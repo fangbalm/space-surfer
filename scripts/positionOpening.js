@@ -3,9 +3,8 @@
 function OpeningPosition() {
 }
 
+
 OpeningPosition.prototype.draw = function(play) {
-
-
 
     	// UFO Hunter
         ctx.clearRect(0, 0, play.width, play.height);
@@ -37,10 +36,11 @@ OpeningPosition.prototype.draw = function(play) {
     
         // Game Controls
         ctx.fillStyle = '#2e2f00';
-        ctx.fillText("Game Controls", play.width / 2, play.height/2 + 210); 
-        ctx.fillText("Left Arrow : Move Left", play.width / 2, play.height/2 + 260); 
-        ctx.fillText("Right Arrow : Move Right", play.width / 2, play.height/2 + 300); 
-        ctx.fillText("Space : Fire", play.width / 2, play.height/2 + 340); 
+        ctx.fillText("Game Controls", play.width / 2, play.height/2 + 200); 
+        ctx.fillText("Left Arrow : Move Left", play.width / 2, play.height/2 + 240); 
+        ctx.fillText("Right Arrow : Move Right", play.width / 2, play.height/2 + 280); 
+        ctx.fillText("Space : Fire", play.width / 2, play.height/2 + 320); 
+        ctx.fillText("Mute : S", play.width / 2, play.height/2 + 360)
 };
 
 OpeningPosition.prototype.keyDown = function(play, keyboardCode) {

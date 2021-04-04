@@ -1,4 +1,4 @@
-function InGamePosition(setting, level){ 
+function InGamePosition(setting, level){
     this.setting = setting; 
     this.level = level; 
     this.object = null; 
@@ -9,6 +9,7 @@ function InGamePosition(setting, level){
     this.shells = [];
 
 }
+
 
 InGamePosition.prototype.shoot = function(){
     if(this.lastBulletTime === null || ((new Date().getTime() - this.lastBulletTime) > (this.setting.bulletMaxFrequency))){
@@ -155,7 +156,6 @@ InGamePosition.prototype.update = function(play){
             }
      }
 
-
 };
 
 InGamePosition.prototype.entry = function(play){
@@ -231,7 +231,13 @@ InGamePosition.prototype.draw = function(play){
 }
 
 InGamePosition.prototype.keyDown = function (play, keyboardCode) {
-    // more code
-    
+    if(keyboardCode == 83){
+        play.sounds.mute();
+    }
+
+    if(keyboardCode == 80){
+        play.pushPosition(new PausePosition());
+    }
+
 }
 

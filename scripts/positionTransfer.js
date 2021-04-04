@@ -26,3 +26,4 @@ TransferPosition.prototype.draw = function(play) {
 
 }
 
+

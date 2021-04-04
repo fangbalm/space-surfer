@@ -1,10 +1,11 @@
 function Sounds(){
+    this.muted = false; 
 
 }
 
 Sounds.prototype.init = function(){
 
-    this.audioArray = ['/sounds/phaseJump1.mp3', '/sounds/pepSound2.mp3', '/sounds/zapThreeToneDown.mp3', '/sounds/pepSound1.mp3']
+    this.audioArray = ['/sounds/phaseJump1.mp3', '/sounds/pepSound2.mp3', '/sounds/zapThreeToneDown.mp3', '/sounds/pepSound1.mp3', '/sounds/astro-ocean.mp3']
     this.allSounds = [];
 
     for(let i = 0; i < this.audioArray.length; i++){
@@ -16,6 +17,9 @@ Sounds.prototype.init = function(){
 }
 
 Sounds.prototype.playAudio = function(audioName){
+    if(this.muted == true){
+        return;
+    }
     let soundNum; 
 
     switch(audioName){
@@ -31,6 +35,8 @@ Sounds.prototype.playAudio = function(audioName){
         case 'pepSound1': 
             soundNum = 3;
             break; 
+        case 'astro-ocean': 
+            soundNum = 4;
         default: 
             break; 
     }
@@ -38,9 +44,13 @@ Sounds.prototype.playAudio = function(audioName){
     this.allSounds[soundNum].play(); 
     this.allSounds[soundNum].currentTime = 0; 
     
-    
 }
 
 Sounds.prototype.mute = function(){
+    if(this.muted == false){
+        this.muted = true;
+    } else if(this.muted == true){
+        this.muted = false;
+    }
     
 }
